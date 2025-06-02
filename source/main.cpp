@@ -141,7 +141,7 @@ void closeNews(){
 		consoleSelect(&topConsole);
 		consoleClear();
 		if (openedNews) openedNews = false;
-		else printf("* Purgification v.1.1 *\n\nA: Open News\nY: Dump News\nX: Delete News\nSELECT: Delete All News\nSTART: Exit Homebrew");
+		else printf("* Purgification v.1.1-Fork *\n\nA: Open News\nY: Dump News\nX: Delete News\nSELECT: Delete All News\nSTART: Exit Homebrew");
 		consoleSelect(&botConsole);
 	}else skipPurge = false;
 }
