@@ -245,9 +245,9 @@ void dumpNews(u32 id, NewsList* news){
 	// writing message file
 	u32 bytes;
 	Handle fileHandle;
-	FS_Archive sdmcArchive=(FS_Archive){ARCHIVE_SDMC, (FS_Path){PATH_EMPTY, 1, (u8*)""}};
+	FS_Path sdmcPath = fsMakePath(PATH_EMPTY, "");
 	FS_Path filePath=fsMakePath(PATH_ASCII, filename);
-	FSUSER_OpenFileDirectly( &fileHandle, sdmcArchive, filePath, FS_OPEN_WRITE | FS_OPEN_CREATE, 0x00000000);
+	FSUSER_OpenFileDirectly(&fileHandle, ARCHIVE_SDMC, sdmcPath, filePath, FS_OPEN_WRITE | FS_OPEN_CREATE, 0);
 	FSFILE_Write(fileHandle, &bytes, 0, message, strlen(message), 0);
 	FSFILE_Close(fileHandle);
 	svcCloseHandle(fileHandle);
@@ -259,7 +259,7 @@ void dumpNews(u32 id, NewsList* news){
 		u8* buffer = (u8*)malloc(0x20000);
 		Result ret = NEWS_GetNotificationImage(news->delete_id, buffer, &size);
 		FS_Path filePath2=fsMakePath(PATH_ASCII, filename2);
-		FSUSER_OpenFileDirectly( &fileHandle2, sdmcArchive, filePath2, FS_OPEN_WRITE | FS_OPEN_CREATE, 0x00000000);
+		FSUSER_OpenFileDirectly(&fileHandle2, ARCHIVE_SDMC, sdmcPath, filePath2, FS_OPEN_WRITE | FS_OPEN_CREATE, 0);
 		FSFILE_Write(fileHandle2, &bytes, 0, buffer, size, 0);
 		FSFILE_Close(fileHandle2);
 		svcCloseHandle(fileHandle2);
