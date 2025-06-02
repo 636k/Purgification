@@ -33,8 +33,8 @@ DATA		:=	source/data
 INCLUDES	:=	source/include
 
 APP_TITLE	:=	Purgification
-APP_AUTHOR	:=	Rinnegatamante
-APP_DESCRIPTION	:=	Little tool for news purging
+APP_AUTHOR	:=	Rinnegatamante & 636k
+APP_DESCRIPTION	:=	Purging Tool For 3DS Notifications
 ICON		:=	icon.png
 #---------------------------------------------------------------------------------
 # options for code generation
