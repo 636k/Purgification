@@ -6,4 +6,8 @@ This Fork fixes some issues with the Original Source-Code of the App. The origin
 
 > [!NOTE]
 > Purgification works on the
-> New & Old Model of 3DS Systems.
+> New & Old Models of 3DS Systems.
+
+>  [!NOTE]
+> In order to use Purgification you must build it by yourself
+> using [devkitPro.](https://github.com/devkitpro)
